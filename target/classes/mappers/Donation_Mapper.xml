@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.sooin.crowdable.donationMapperNS">
+	<insert id="insertDonation" parameterType="donationVO">
+    	Insert Into donation(boardnum,membernum,donate)
+    	values(
+    		#{boardnum},
+    		#{membernum},
+    		#{donate}
+    	)
+    </insert>
+    <select id="getDonationAll" resultType="donationVO">
+    	select 
+    		*
+    	from 
+    		donation
+    </select>
+     <select id="getDonationAllLimit" resultType="donationVO" parameterType="hashmap">
+    	select 
+    		*
+    	from 
+    		donation
+    	order by
+    		num desc
+    	limit 
+    		#{pageStart}, #{perPageNum}
+    </select>
+     <select id="getDonationOne" resultType="donationVO" parameterType="int">
+    	select 
+    		*
+    	from 
+    		donation
+    	where
+    		num=#{num}
+    </select>
+    <delete id="deleteDonation" parameterType="int">
+    	delete from donation
+    	where num = #{num}
+    </delete>
+    <select id="getDonationOnemembernum" resultType="donationVO" parameterType="int">
+    select 
+    		*
+    	from 
+    		donation
+    	where
+    		membernum=#{membernum}
+    </select>
+    <select id="getDonationOnemembernumLimit" resultType="donationVO" parameterType="hashmap">
+    select 
+    		*
+    	from 
+    		donation
+    	where
+    		membernum=#{membernum}
+    	order by
+    		num desc
+    	limit 
+    		#{pageStart}, #{perPageNum}
+    </select>
+    <select id="getDonationOneboardnum" resultType="donationVO" parameterType="int">
+    select 
+    		*
+    	from 
+    		donation
+    	where
+    		boardnum=#{boardnum}
+    	
+    </select>
+    <select id="getDonationOneboardnumLimit" resultType="donationVO" parameterType="hashmap">
+    select 
+    		*
+    	from 
+    		donation
+    	where
+    		boardnum=#{boardnum}
+    	order by
+    		num desc
+    	limit 
+    		#{pageStart}, #{perPageNum}
+    </select>
+    <select id = "sumDoantionmembernum" resultType="int" parameterType="int">
+    SELECT 
+    	COALESCE(SUM(donate),0) as donate
+    FROM 
+    	donation
+    WHERE 
+    	membernum=#{membernum}
+    </select>
+    <select id = "sumDoantionboardnum" resultType="int" parameterType="int">
+    SELECT 
+    	COALESCE(SUM(donate),0) as donate
+    FROM 
+    	donation
+    WHERE 
+    	boardnum=#{boardnum}
+    </select>
+    <select id = "sumDoantiononeProject" resultType="int" parameterType="donationVO">
+    SELECT 
+    	COALESCE(SUM(donate),0) as donate
+    FROM 
+    	donation
+    WHERE 
+    	boardnum=#{boardnum}
+    and
+    	membernum=#{membernum}
+    </select>
+    <select id = "sumDoantionOneGroupBoardnum" resultType="donationVO" parameterType="int">
+    SELECT 
+    	COALESCE(SUM(donate),0) as donate,boardnum
+    FROM 
+    	donation
+    WHERE 
+    	membernum=#{membernum}
+   GROUP BY
+   		boardnum
+   	ORDER BY 
+   		SUM(donate) DESC;
+    </select>
+</mapper>

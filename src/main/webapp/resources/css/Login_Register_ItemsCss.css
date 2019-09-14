@@ -1,0 +1,46 @@
+.login_regist_table{
+	margin-left: 25%;
+	margin-right: 25%;
+	border : 1px;
+}
+#login_submit{
+	background-color: #2DB400; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#register_submit{
+	background-color: #2DB400; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#register_submit:disabled{
+	background-color: #777777; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.Login_Register_Nevi{
+	display : block;	
+	cursor: pointer;
+	color :#666666;
+	width : 300px;
+	height : auto;
+	background-image:url(/resources/images/All_NeviImg/logo.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	margin-left: 40%
+}

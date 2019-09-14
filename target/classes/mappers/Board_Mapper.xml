@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.sooin.crowdable.boardMapperNS">
+	<!-- <resultMap id="boardVO" type="boardVO">
+    	<id property="num" column="num"></id>
+    	<result property="membernum" column="membernum"/>
+    	<result property="boardid" column="boardid"/>
+    	<result property="category1" column="category1"/>
+    	<result property="category2" column="category2"/>
+    	<result property="category3" column="category3"/>
+    	<result property="writer" column="writer"/>
+    	<result property="subject" column="subject"/>
+    	<result property="email" column="email"/>
+    	<result property="content" column="content"/>
+    	<result property="ip" column="ip"/>
+    	<result property="filename" column="filename"/>
+    	<result property="filesize" column="filesize"/>
+    	<result property="activestatus" column="activestatus"/>
+    	<result property="account" column="account"/>
+    	<result property="wantmoney" column="wantmoney"/>
+    	<result property="nowmoney" column="nowmoney"/>
+    </resultMap> -->
+    
+    <!-- 게시글 전체 목록 -->
+    <select id ="getBoardListAll" resultType="boardVO" >
+    	select 
+    		*
+    	from 
+    		board
+    	order by
+    		num desc
+    </select>
+    <select id ="getBoardListAllList" resultType="boardVO" >
+    	select 
+    		*
+    	from 
+    		board
+    	order by
+    		num desc
+    	limit #{pageStart}, #{perPageNum}
+    </select>
+ 
+    <!--  게시글 작성 regdate-->
+    <insert id ="boardCreate">
+    	insert into board(membernum,boardid,category1,category2,category3,writer,subject,email,regdate
+    	,content,ip,filename,filesize,activestatus,wantmoney)
+    	values(
+    		#{membernum},
+    		#{boardid},
+    		#{category1},
+    		#{category2},
+    		#{category3},
+    		#{writer},
+    		#{subject},
+    		#{email},
+    		now(),
+    		#{content},
+    		#{ip},
+    		#{filename},
+    		#{filesize},
+    		#{activestatus},
+    		#{wantmoney}
+    	)
+    </insert>
+    <!--  !게시글 작성 -->
+    
+    <!-- 특정 게시글 상세 보기 -->
+    <select id ="getBoardView" resultType="boardVO" parameterType="int">
+    	select
+    		*
+    	from
+    		board
+    	where
+    		num = #{num}
+    		
+    </select>
+    <!-- !특정 게시글 상세 보기 -->
+    
+    <!-- 특정 인물  게시글 리스트 -->
+    <select id ="getBoardOneList" resultType="boardVO" parameterType="int">
+    	select
+    		*
+    	from
+    		board
+    	where
+    		membernum = #{membernum}
+    <!-- !특정 인물  게시글 리스트 -->
+    </select>
+     <select id ="getBoardOneListLimit" resultType="boardVO" parameterType="hashmap">
+    	select
+    		*
+    	from
+    		board
+    	where
+    		membernum = #{membernum}
+    	limit #{pageStart}, #{perPageNum}
+    	
+    <!-- !특정 인물  게시글 리스트 -->
+    </select>
+    <!-- 특정 분류 게시글 리스트 -->
+    <select id = "getBoardIdList" resultType="boardVO" parameterType="string">
+    	select
+    		*
+    	from
+    		board
+    	where
+    		boardid = #{boardid}
+    	order by
+    		num desc
+    </select>
+     <select id = "getBoardIdListtwo" resultType="boardVO" parameterType="hashmap">
+    	select
+    		*
+    	from
+    		board
+    	where
+    		boardid = #{boardid}
+    	and
+    		activestatus=#{activestatus}
+    	order by
+    		num desc
+    </select>
+    <select id = "getBoardIdListtwoFilter" resultType="boardVO" parameterType="hashmap">
+    	select
+    		*
+    	from
+    		board
+    	where
+    		boardid = #{boardid}
+    	and
+    		activestatus=#{activestatus}
+    	and(
+    		category1= #{category}
+    	OR
+			category2 = #{category}
+		OR
+			category3 = #{category}
+    	)
+    	order by
+    		num desc
+    </select>
+    
+    <select id = "getBoardIdListLimit" resultType="boardVO" parameterType="hashmap">
+    	select
+    		*
+    	from
+    		board
+    	where
+    		boardid = #{boardid}
+    	order by
+    		num desc
+    	limit #{pageStart}, #{perPageNum}
+    </select>
+    
+    <select id = "getBoardIdListLimittwo" resultType="boardVO" parameterType="hashmap">
+    	select
+    		*
+    	from
+    		board
+    	where
+    		boardid = #{boardid}
+    	and
+    		activestatus=#{activestatus}
+    	order by
+    		num desc
+    	limit #{pageStart}, #{perPageNum}
+    </select>
+    <select id = "getBoardIdListLimittwoFilter" resultType="boardVO" parameterType="hashmap">
+    	select
+    		*
+    	from
+    		board
+    	where
+    		boardid = #{boardid}
+    	and
+    		activestatus=#{activestatus}
+    	and(
+    		category1= #{category}
+    	OR
+			category2 = #{category}
+		OR
+			category3 = #{category}
+    	)
+    	order by
+    		num desc
+    	limit #{pageStart}, #{perPageNum}
+    </select>
+    
+    <update id="updateBoardActive" parameterType="boardVO">
+    	update board set
+    		activestatus = #{activestatus},
+    		activedate = now()
+    	where
+    		num = #{num}
+    </update>
+    <delete id="deleteBoard" parameterType="int">
+    	delete from board
+    	where num = #{num}
+    </delete>
+    <update id="updateBoardTot" parameterType="boardVO">
+    	update board set
+    		membernum=#{membernum},
+    		boardid=#{boardid},
+    		category1=#{category1},
+    		category2=#{category2},
+    		category3=#{category3},
+    		writer=#{writer},
+    		subject=#{subject},
+    		email=#{email},
+    		regdate=now(),
+    		content=#{content},
+    		ip=#{ip},
+    		filename=#{filename},
+    		filesize=#{filesize},
+    		activestatus=#{activestatus},
+    		wantmoney=#{wantmoney}
+    	where
+    		num = #{num}
+    </update>
+    <update id="updateBoardaddional" parameterType="boardVO">
+    	update board set
+    		enddate=#{enddate},
+    		updatedate=now(),
+    		activestatus=#{activestatus},
+    		account=#{account},
+    		wantmoney=#{wantmoney}
+    	where
+    		num = #{num}
+    </update>
+  </mapper>

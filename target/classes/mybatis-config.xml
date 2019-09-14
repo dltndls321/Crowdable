@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    <configuration>
+    	 
+    	 <typeAliases>
+            <typeAlias type="com.sooin.crowdable.vo.MemberVO" alias="memberVO"/>
+            <typeAlias type="com.sooin.crowdable.vo.BoardVO" alias="boardVO"/>
+            <typeAlias type="com.sooin.crowdable.vo.DonationVO" alias="donationVO"/>
+            <typeAlias type="com.sooin.crowdable.vo.GiftVO" alias="giftVO"/>
+        </typeAliases>
+        <!-- <mappers>
+        	<mapper resource="/mappers/Login_Register_Mapper.xml"/>
+        	<mapper resource="/mappers/Board_Mapper.xml"/>
+        </mappers> -->
+    </configuration>

@@ -1,0 +1,282 @@
+@charset "utf-8";
+.login_regist_table{
+	margin-left: 25%;
+	margin-right: 25%;
+	border : 1px;
+}
+.item1 {
+	grid-area: massively-multiplayer;
+	cursor: pointer;
+	color :#666666;
+	background-image:url(/resources/images/Main_ItemsImg/massively-multiplayer.jpg);
+	background-size: 100%;	
+	transition: background-image 0.5s ease-in-out;	
+}
+#item1{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item1:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item1:hover #item1{
+	opacity: 1;
+}
+
+.item2 {
+	grid-area: racing;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/racing.jpg);
+	background-size: 100%;
+}
+#item2{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item2:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item2:hover #item2{
+	opacity: 1;
+}
+
+
+.item3 {
+	grid-area: rpg;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/rpg.jpg);
+	background-size: 100%;
+}
+#item3{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item3:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item3:hover #item3{
+	opacity: 1;
+}
+
+
+.item4 {
+	grid-area: sports;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/sports.jpg);
+	background-size: 100% 100%;
+}
+#item4{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item4:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item4:hover #item4{
+	opacity: 1;
+}
+
+
+.item5 {
+	grid-area: simulation;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/simulation.jpg);
+	background-size: 100%;
+}
+#item5{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item5:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item5:hover #item5{
+	opacity: 1;
+}
+
+.item6 {
+	grid-area: action;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/action.jpg);
+	background-size: 100%;
+}
+#item6{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item6:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item6:hover #item6{
+	opacity: 1;
+}
+
+
+.item7 {
+	grid-area: adventure;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/adventure.jpg);
+	background-size: 100% 100%;
+}
+#item7{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item7:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item7:hover #item7{
+	opacity: 1;
+}
+
+.item8 {
+	grid-area: indie;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/indie.jpg);
+	background-size: 100%;
+}
+#item8{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item8:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item8:hover #item8{
+	opacity: 1;
+}
+
+.item9 {
+	grid-area: strategy;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/strategy.jpg);
+	background-size: 100%;
+}
+#item9{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item9:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item9:hover #item9{
+	opacity: 1;
+}
+
+.item10 {
+	grid-area: casual;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/casual.jpg);
+	background-size: 100% 100%;
+}
+#item10{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item10:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item10:hover #item10{
+	opacity: 1;
+}
+
+.item11 {
+	grid-area: othergame;
+	cursor: pointer;
+	color :#666666;
+	background-image: url(/resources/images/Main_ItemsImg/othergame.jpg);
+	background-size: 100%;
+}
+#item11{
+	opacity: 0;
+	transition : 0.3s;
+}
+.item11:hover{
+	background-image:url();	
+	transition: background-image 0.5s ease-in-out;
+}
+.item11:hover #item11{
+	opacity: 1;
+}
+
+@media ( min-width :993px) {
+	.grid-container {
+		margin-left: 200px !important;
+		margin-right: 0 !important;
+		
+	}
+	.w3-auto {
+		max-width: 100%;
+	}
+}
+
+.grid-container {
+	transition: margin-left .4s
+}
+
+.grid-container {
+	margin-top:10px;
+	height: 850px;
+	display: grid;
+	grid-template-areas:
+		'massively-multiplayer massively-multiplayer massively-multiplayer massively-multiplayer massively-multiplayer massively-multiplayer'
+		'racing racing racing rpg sports sports'
+		'simulation simulation action action sports sports'
+		'adventure adventure action action sports sports'
+		'adventure adventure action action strategy strategy'
+		'adventure adventure casual casual strategy strategy'
+		'adventure adventure casual casual othergame othergame'
+		'indie indie casual casual othergame othergame';
+	grid-gap: 5px;
+	background-color: #ffffff;
+	padding: 5px;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto auto;
+}
+
+.grid-container>div {
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	padding: 20px 0;
+	font-size: 30px;
+}
+#savebutton{
+	background-color: #2DB400; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#deletebutton{
+		background-color: #777777; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+

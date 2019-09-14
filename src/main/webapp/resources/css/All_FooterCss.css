@@ -1,0 +1,7 @@
+@charset "utf-8";
+@media (min-width:993px){.all-footer{margin-left:0px!important;margin-right:0!important}.w3-auto{max-width:100%}}
+.all-footer{
+	transition:margin-left .4s;
+	background-color: #666666;
+	color: #ffffff;
+	text-align: right;}
